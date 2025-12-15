@@ -1,0 +1,11 @@
+# Data configurations
+
+_target_: src.data.citation_datasets.CitationDataset
+dataset_name: "cora"
+root: "data"
+train_split: 0.6
+val_split: 0.2
+test_split: 0.2
+normalize_features: true
+add_self_loops: true
+transform: null

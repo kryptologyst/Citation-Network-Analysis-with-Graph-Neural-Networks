@@ -1,0 +1,14 @@
+# Training configurations
+
+_target_: src.train.trainer.Trainer
+epochs: 200
+patience: 50
+batch_size: 1
+optimizer: "adam"
+learning_rate: 0.01
+weight_decay: 5e-4
+scheduler: "cosine"
+warmup_epochs: 10
+grad_clip_norm: 1.0
+save_best: true
+save_last: true

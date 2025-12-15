@@ -1,0 +1,8 @@
+# Model configurations
+
+_target_: src.models.gcn.GCN
+hidden_dim: 64
+num_layers: 2
+dropout: 0.5
+activation: "relu"
+batch_norm: true

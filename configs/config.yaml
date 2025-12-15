@@ -1,0 +1,56 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - model: gcn
+  - data: cora
+  - train: default
+
+# Experiment settings
+experiment_name: "citation_network_analysis"
+seed: 42
+device: "auto"  # auto, cuda, mps, cpu
+
+# Model settings
+model:
+  hidden_dim: 64
+  num_layers: 2
+  dropout: 0.5
+  learning_rate: 0.01
+  weight_decay: 5e-4
+
+# Data settings
+data:
+  dataset_name: "cora"
+  train_split: 0.6
+  val_split: 0.2
+  test_split: 0.2
+  normalize_features: true
+  add_self_loops: true
+
+# Training settings
+train:
+  epochs: 200
+  patience: 50
+  batch_size: 1
+  optimizer: "adam"
+  scheduler: "cosine"
+
+# Evaluation settings
+eval:
+  metrics: ["accuracy", "f1_macro", "f1_micro", "auroc"]
+  save_predictions: true
+  save_embeddings: true
+
+# Logging settings
+logging:
+  log_level: "INFO"
+  use_wandb: false
+  wandb_project: "citation-networks"
+  save_dir: "logs"
+
+# Paths
+paths:
+  data_dir: "data"
+  assets_dir: "assets"
+  checkpoints_dir: "assets/models"
